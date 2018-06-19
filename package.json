@@ -1,0 +1,16 @@
+{
+  "name": "language-gid",
+  "version": "0.0.0",
+  "description": "Language syntax highlight (grammar) rules for GiD problemtype files",
+  "keywords": [
+    "language",
+    "grammar",
+    "syntax",
+    "highlighting"
+  ],
+  "repository": "https://github.com/mestradam/language-gid",
+  "license": "MIT",
+  "engines": {
+    "atom": ">=1.0.0 <2.0.0"
+  }
+}

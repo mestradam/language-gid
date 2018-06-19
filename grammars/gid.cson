@@ -1,0 +1,212 @@
+# If this is your first time writing a language grammar, check out:
+#   - https://flight-manual.atom.io/hacking-atom/sections/creating-a-grammar/
+
+scopeName: 'source.gid'
+name: 'GiD'
+fileTypes: [
+  'bas'
+  'cnd'
+  'mat'
+  'prb'
+]
+patterns: [
+  {
+    match: '\\b(([0-9]+\\.?[0-9]*)|([0-9]+\\.?[0-9]+\\.?[eE]*)|(\\.[0-9]+))\\b'
+    name: 'constant.numeric.gid'
+  }
+  # {
+  #   match: '(\\*\\b(if|elseif|else|endif)\\b)|(\\*\\b\\w+)'
+  #   captures:
+  #     '1': name: 'keyword.control.gid'
+  #     '2': name: 'variable.language.gid'
+  # }
+  # {
+  #   match: '[^(\\*\\b(if|elseif|else|endif))]\\*\\w+'
+  #   name: 'variable.language.gid'
+  # }
+  {
+    match: '\\*\\b(if|elseif|else|endif)'
+    name: 'keyword.control.gid'
+  }
+  {
+    match: '\\*\\b\\w+'
+    name: 'variable.language.gid'
+  }
+  {
+    match: '(==|>=|<=|!=)'
+    name: 'keyword.operator.gid'
+  }
+  # {
+  #   match: '(+|-|*|/)'
+  #   name: 'keyword.operator.gid'
+  # }
+
+  ###############################################
+  {
+    match: 'CONDITION:'
+    # name: 'keyword.other.gid'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'END CONDITION'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'MATERIAL:'
+    # name: 'keyword.other.gid'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'END MATERIAL'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'PROBLEM DATA'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'END GENERAL DATA'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'INTERVAL DATA'
+    name: 'entity.name.section.gid'
+  }
+  {
+    match: 'END INTERVAL DATA'
+    name: 'entity.name.section.gid'
+  }
+
+  ###############################################
+  {
+    match: 'NUMBER:'
+    # name: 'keyword.other.gid'
+    name: 'entity.name.tag.gid'
+  }
+
+  ###############################################
+  {
+    match: 'CONDTYPE:'
+    name: 'keyword.other.gid'
+  }
+  {
+    match: 'CONDMESHTYPE:'
+    name: 'keyword.other.gid'
+  }
+  {
+    match: 'QUESTION:'
+    name: 'keyword.other.gid'
+  }
+  {
+    match: 'VALUE:'
+    name: 'keyword.other.gid'
+  }
+  {
+    match: 'CANREPEAT:'
+    name: 'keyword.other.gid'
+  }
+
+  ###############################################
+  {
+    match: 'BOOK:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'TITLE:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'IMAGE:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'HELP:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'COMMENT:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'DEPENDENCIES:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'STATE:'
+    name: 'entity.name.type.gid'
+  }
+  {
+    match: 'TKWIDGET:'
+    name: 'entity.name.type.gid'
+  }
+
+  ###############################################
+  {
+    match: '#CB#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#LA#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#G#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#L#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#A#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#N#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#FUNC#'
+    name: 'constant.character.gid'
+  }
+  {
+    match: '#UNITS#'
+    name: 'constant.character.gid'
+  }
+
+  ###############################################
+  {
+    match: 'TITLESTATE'
+    name: 'constant.other.gid'
+  }
+  {
+    match: 'SET'
+    name: 'constant.other.gid'
+  }
+  {
+    match: 'HIDE'
+    name: 'constant.other.gid'
+  }
+  {
+    match: 'HIDDEN'
+    name: 'constant.other.gid'
+  }
+  {
+    match: 'RESTORE'
+    name: 'constant.other.gid'
+  }
+  {
+    match: '#CURRENT#'
+    name: 'constant.other.gid'
+  }
+
+  ###############################################
+  {
+    match: 'over \\(nodes\\|face elements\\|body elements\\)'
+    name: 'variable.language.gid'
+  }
+  {
+    match: 'over \\(points\\|lines\\|surfaces\\|volumes\\|layer\\)'
+    name: 'variable.language.gid'
+  }
+]
